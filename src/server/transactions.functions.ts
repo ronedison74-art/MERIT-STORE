@@ -100,8 +100,9 @@ export const bulkEncode = createServerFn({ method: 'POST' })
           status: 'Pending',
           meritsDeducted: 0,
           violation: false,
-          remarks: data.remarks || null,
-          createdByAccountId: account.id,
+         remarks: data.remarks || null,
+         createdByAccountId: account.id,
+         source: account.role,
         })
         .returning()
       created.push(row)
