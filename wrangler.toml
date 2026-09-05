@@ -1,21 +1,16 @@
 name = "merit-store"
 type = "javascript"
-account_id = "YOUR_ACCOUNT_ID"  # Get from Cloudflare Dashboard
+account_id = "YOUR_ACCOUNT_ID"
 pages_build_output_dir = "dist"
 
-# Environment variables
 [env.production]
 vars = { ENVIRONMENT = "production" }
 
 [env.production.vars]
-DATABASE_URL = "postgresql://..." # Your Neon connection string
-
-[env.development]
-vars = { ENVIRONMENT = "development" }
+DATABASE_URL = "postgresql://..."
 
 [build]
-command = "npm run build"
-watch_paths = ["src/**/*.ts", "src/**/*.tsx"]
+command = "pnpm install && npm run build"
 
 [site]
 bucket = "dist"
