@@ -4,13 +4,10 @@ account_id = "YOUR_ACCOUNT_ID"
 pages_build_output_dir = "dist"
 
 [env.production]
-vars = { ENVIRONMENT = "production" }
-
-[env.production.vars]
-DATABASE_URL = "postgresql://..."
+vars = { ENVIRONMENT = "production", DATABASE_URL = "postgresql://..." }
 
 [build]
-command = "pnpm install && npm run build"
+command = "pnpm build"
 
 [site]
 bucket = "dist"
